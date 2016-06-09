@@ -1,7 +1,7 @@
 FROM alpine:3.3
 
-ENV SHELLDAP_VERSION 1.2.0
-ENV SHELLDAP_SHA512 ee46a1aae146fe22e8530a41cc21ee35e4dfc1ae38cf77f43dc838dadaac36d3
+ENV SHELLDAP_VERSION 1.3.2
+ENV SHELLDAP_SHA512 b4f84cfa164e69c7bdcbbd39416900190df8acf701539fbf0f2576514961c683
 
 RUN set -ex \
  && apk add --no-cache perl perl-yaml-syck perl-net-ldap perl-io-socket-ssl perl-authen-sasl perl-digest-md5 perl-term-readkey vim \
