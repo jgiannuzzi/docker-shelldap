@@ -27,7 +27,8 @@ RUN set -ex \
  && rm -rf shelldap-${SHELLDAP_VERSION} shelldap-${SHELLDAP_VERSION}.tar.gz
 
 RUN set -ex \
- && apk add --no-cache vim
+ && apk add --no-cache vim \
+ && echo "set background=dark" >> /etc/vim/vimrc
 
 ENV EDITOR vim
 
