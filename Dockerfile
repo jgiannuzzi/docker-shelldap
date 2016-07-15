@@ -29,6 +29,8 @@ RUN set -ex \
 RUN set -ex \
  && apk add --no-cache vim
 
+ENV EDITOR vim
+
 COPY docker-entrypoint.sh /
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
