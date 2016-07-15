@@ -1,4 +1,4 @@
-FROM alpine:3.3
+FROM alpine:3.4
 
 ENV SHELLDAP_VERSION 1.3.2
 ENV SHELLDAP_SHA512 b4f84cfa164e69c7bdcbbd39416900190df8acf701539fbf0f2576514961c683
@@ -20,7 +20,9 @@ RUN set -ex \
  && rm -rf ~/.cpan
 
 RUN set -ex \
+ && apk add --no-cache openssl \
  && wget https://bitbucket.org/mahlon/shelldap/downloads/shelldap-${SHELLDAP_VERSION}.tar.gz \
+ && apk del openssl \
  && echo "${SHELLDAP_SHA512}  shelldap-${SHELLDAP_VERSION}.tar.gz" | sha256sum -c - \
  && tar xzvf shelldap-${SHELLDAP_VERSION}.tar.gz \
  && mv shelldap-${SHELLDAP_VERSION}/shelldap /usr/local/bin \
